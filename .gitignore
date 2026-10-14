@@ -19,6 +19,7 @@ htmlcov/
 .dsh-home/
 # pnpm shim via corepack, created on demand by bin/sched-agent-install
 .tools/
+.pnpm-store/
 
 # --- Runtime output (may contain real personnel data) ---
 data/
