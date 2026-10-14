@@ -1,0 +1,12 @@
+#!/bin/sh
+# Repository-local launcher for the SchedulingOR CLI.
+#
+# Deliberately does NOT rely on the editable install (`.venv` `.pth` files can be
+# neutralised by macOS `UF_HIDDEN` file flags, which CPython 3.14 skips silently --
+# see docs/research/00-environment-verification.md §5). Setting PYTHONPATH works
+# regardless of how the venv was installed.
+set -eu
+REPO=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+PY="$REPO/.venv/bin/python"
+[ -x "$PY" ] || PY=$(command -v python3)
+exec env PYTHONPATH="$REPO/src${PYTHONPATH:+:$PYTHONPATH}" "$PY" -m scheduling_or.cli "$@"

@@ -1,0 +1,37 @@
+# 场景三：课后服务 / 晚自习辅导
+# 按科目匹配辅导教师；核心诉求是"该科老师辅导该科"与课时量均衡。
+schema_version: 1
+institution: after-school
+
+# 本场景的权重与求解参数视为权威：显式选用本机构配置时覆盖规格里的值。
+config_policy: override
+
+solver:
+  max_time_seconds: 45
+  num_workers: 8
+  strategy: lexicographic
+
+weights:
+  # 缺辅导教师会直接影响课后服务能否开课
+  understaff: 1000
+  overstaff: 20
+  shift_spread: 80
+  weekend_spread: 40
+  preference: 30
+  consecutive_preference: 10
+  transition: 10
+
+export:
+  layout: monthly
+  formats: [xlsx, md]
+  title: 课后服务与晚自习辅导安排
+  shift_colors:
+    p7: "EAD1DC"
+    p8: "D0E0E3"
+  sheets: [README, Roster, Assignments, Coverage, Fairness, Violations]
+
+notes:
+  - 数学日与英语日交替，第七节辅导须由对应科目教师承担
+  - 第七节与晚自习之间至少间隔 1 小时
+  - 尽量每晚安排一位资深教师带班（skill_shortfall，付代价而非不可行）
+  - 每人每天最多两轮

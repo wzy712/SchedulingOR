@@ -1,0 +1,21 @@
+# 配置型 DSH bundle：唯一的作用是插入一条 MCP 客户端行。
+# 官方约定：这类 bundle 的 manifest 只需要唯一的 name、version 和 dsh.bundle.patch，
+# 不需要任何 Host / Client 入口文件 —— 这是把外部进程接进 DSH 最便宜的方式。
+#
+# 路径用 !!js 表达式解析，因此本 bundle 不绑定任何绝对路径：
+#   SCHEDULINGOR_HOME 指向 SchedulingOR 仓库根；未设置时回退到 dsh 的启动目录。
+- insert:
+    - id: mcp-schedulingor
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: schedulingor
+        transport: stdio
+        command: !!js "(process.env.SCHEDULINGOR_HOME || process.cwd()) + '/.venv/bin/python'"
+        args: ['-m', 'scheduling_or.mcp_server']
+        cwd: !!js "process.env.SCHEDULINGOR_HOME || process.cwd()"
+        env:
+          # 显式 PYTHONPATH：venv 的 .pth 可能被 macOS UF_HIDDEN 标志弄失效
+          PYTHONPATH: !!js "(process.env.SCHEDULINGOR_HOME || process.cwd()) + '/src'"
+        # true = 起不来就让 profile 启动失败，而不是静默没有工具
+        failOnStartupError: true
+        toolCallTimeoutMs: 120000

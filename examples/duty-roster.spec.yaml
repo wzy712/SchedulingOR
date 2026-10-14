@@ -1,0 +1,440 @@
+schema_version: 1
+name: 教师值班表（合成样例）
+instance:
+  horizon:
+    start: '2025-09-01'
+    end: '2025-09-30'
+  shifts:
+  - id: day
+    name: 白班值班
+    start: 08:00
+    end: '18:00'
+  - id: night
+    name: 夜班值班
+    start: '18:00'
+    end: '22:00'
+  people:
+  - id: T01
+    name: 钱思远
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: chinese
+    max_shifts: 14
+  - id: T02
+    name: 冯思远
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: math
+    max_shifts: 14
+  - id: T03
+    name: 吕伟东
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: english
+    max_shifts: 14
+  - id: T04
+    name: 尤嘉怡
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: chinese
+    max_shifts: 14
+  - id: T05
+    name: 姜梦琪
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: math
+    max_shifts: 14
+  - id: T06
+    name: 王雅琴
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: english
+    max_shifts: 14
+  - id: T07
+    name: 施嘉怡
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: chinese
+    max_shifts: 14
+  - id: T08
+    name: 尤海燕
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: math
+    max_shifts: 14
+  - id: T09
+    name: 张雅琴
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+    max_shifts: 14
+  - id: T10
+    name: 金梦琪
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: chinese
+    max_shifts: 14
+  - id: T11
+    name: 吴嘉怡
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: math
+    max_shifts: 14
+  - id: T12
+    name: 秦雪梅
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+    max_shifts: 14
+  - id: T13
+    name: 曹文静
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: chinese
+    max_shifts: 14
+  - id: T14
+    name: 吕晓明
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: math
+    max_shifts: 14
+  - id: T15
+    name: 王海燕
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+    max_shifts: 14
+  - id: T16
+    name: 华浩然
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: chinese
+    max_shifts: 14
+  - id: T17
+    name: 李雪梅
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: math
+    max_shifts: 14
+  - id: T18
+    name: 陈晓明
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: english
+    max_shifts: 14
+  groups:
+  - id: all_teachers
+    all: true
+  - id: weekend_capable
+    by_skill: chinese
+  demand:
+  - date: '2025-09-01'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-02'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-03'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-04'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-05'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-06'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-06'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-07'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-07'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-08'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-09'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-10'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-11'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-12'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-13'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-13'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-14'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-14'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-15'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-16'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-17'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-18'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-19'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-20'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-20'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-21'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-21'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-22'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-23'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-24'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-25'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-26'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-27'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-27'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-28'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-28'
+    shift: night
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-29'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  - date: '2025-09-30'
+    shift: day
+    min: 1
+    target: 1
+    max: 1
+  unavailability:
+  - person: T04
+    dates:
+    - '2025-09-01'
+    - '2025-09-02'
+    - '2025-09-03'
+    reason: 外出培训
+  - person: T11
+    dates:
+    - '2025-09-11'
+    - '2025-09-12'
+    reason: 病假
+  preferences:
+  - person: T02
+    shift: night
+    kind: avoid
+    weekday: sat
+    weight: 2
+  - person: T09
+    shift: day
+    kind: want
+    weekday: mon
+    weight: 1
+constraints:
+  hard:
+  - type: one_shift_per_day
+    max_per_day: 1
+  - type: rest_between_shifts
+    min_hours: 12
+  - type: max_consecutive_work_days
+    days: 5
+  - type: weekly_rest_days
+    min: 2
+  - type: hours_bounds
+    period: week
+    max: 40
+  soft:
+  - type: coverage_shortfall
+    weight: 1000
+  - type: coverage_excess
+    weight: 50
+  - type: fairness
+    metric: weekend_shifts
+    aggregation: spread
+    weight: 200
+  - type: fairness
+    metric: total_shifts
+    aggregation: spread
+    weight: 80
+  - type: fairness
+    metric: shift:night
+    aggregation: spread
+    weight: 120
+  - type: preference
+    weight: 30
+solver:
+  max_time_seconds: 60
+  num_workers: 8
+  strategy: lexicographic
+assumptions:
+- 工作日只需 1 人白班值班，周末额外需要 1 人夜班值守（默认值，请确认）
+- 每周至少休息 2 天，连续值班不超过 5 天
+- 班次间最小休息 12 小时
+- 只设每周工时上限 40 小时，不设下限（值班岗位有限，设下限会强制全员上班）
+unresolved:
+- 法定节假日是否按周末规则加倍值守？

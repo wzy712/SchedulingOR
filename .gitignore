@@ -1,0 +1,44 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# uv cache pinned into the repo (some sandboxes block ~/.cache/uv)
+.uv-cache/
+
+# --- DSH ---
+# Isolated DSH_HOME used for verification; never the user's real ~/.dsh
+.dsh-home/
+# pnpm shim via corepack, created on demand by bin/sched-agent-install
+.tools/
+
+# --- Runtime output (may contain real personnel data) ---
+data/
+runs/
+specs/
+
+# --- Editors / OS ---
+.idea/
+.vscode/
+.DS_Store
+
+# --- Local-only development material (intentionally NOT published) ---------
+# `dsh/profile.patch.yml` is the dev-time `--patch` overlay; it hardcodes this
+# machine's paths. The plugin in dsh-plugin/ is the portable replacement.
+dsh/
+# This repository ships the minimum needed to run the DSH plugin: the plugin,
+# the kernel it mounts, the agent skill, config templates and sample specs.
+# Delete a line below to start publishing that directory.
+tests/
+docs/
+poc/
+.research/
+tools/asar_reader.py

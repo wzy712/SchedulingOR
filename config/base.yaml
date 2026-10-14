@@ -1,0 +1,48 @@
+# SchedulingOR 通用默认配置
+# 合并顺序：base.yaml -> config/institutions/<name>.yaml -> config/runs/<run>.yaml -> --set a.b=c
+# 后加载的层覆盖前面的层；每个字段的含义见 src/scheduling_or/config.py
+schema_version: 1
+
+# config 与 spec 的优先级（见 src/scheduling_or/config.py）：
+#   fill_missing（默认）= 规格里写了的以规格为准，配置只补规格没写的
+#   override            = 配置直接覆盖（institutions/*.yaml 与 --set 会自动启用）
+#   ignore              = 完全按规格，用于复现旧结果
+config_policy: fill_missing
+
+solver:
+  max_time_seconds: 60
+  num_workers: 8
+  random_seed: 0
+  # lexicographic：按权重数量级分层优化，重量级目标先锁定，不会被大量小项淹没
+  # weighted_sum ：一次求解加权和，更快但优先级不受保护
+  strategy: lexicographic
+  relative_gap_limit: 0.0
+  log_search_progress: false
+
+# 软约束权重。量级约定（沿用业界实践）：
+#   1e12 = 业务上"绝不该违反"（本工具建议改用硬约束，而不是靠权重）
+#   1e3  = 公平性 / 关键覆盖
+#   1e0~1e2 = 偏好、微调
+# weight: 0 表示停用该软约束（便于 A/B 对比，不必删配置）
+weights:
+  understaff: 1000          # 人手不足：这是用户真正在意的失败
+  overstaff: 20             # 人手超配：浪费人力，代价低
+  shift_spread: 50          # 各类班次数量的极差
+  weekend_spread: 50        # 周末班次的极差
+  preference: 30            # 个人偏好
+  consecutive_preference: 10 # 连续班次长度偏好
+  transition: 10            # 不喜欢的班次接续
+
+export:
+  formats: [xlsx, md]
+  layout: monthly
+  title: ""
+  # 班次 -> 颜色，留空则按班次 id 自动确定性配色
+  shift_colors: {}
+  sheets: [README, Roster, Assignments, Coverage, Fairness, Violations]
+  freeze_header_row: 2
+  highlight_weekends: true
+
+# 用户表格的列映射（各场景在 institutions/*.yaml 里覆盖）
+import:
+  defaults: {}

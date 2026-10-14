@@ -1,0 +1,12 @@
+{
+  "name": "dsh-scheduling-or",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把 SchedulingOR 的排班内核挂载为 DSH 工具（MCP stdio）。纯配置型 bundle，无 Host/Client 入口文件。",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

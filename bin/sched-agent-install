@@ -1,0 +1,11 @@
+#!/bin/sh
+# 一次性安装：创建 DSH profile + 安装 dsh-scheduling-or bundle + 配置模型 provider。
+#
+#   ./bin/sched-agent-install
+#   ./bin/sched-agent-install --provider none          # 不动模型配置
+#   ./bin/sched-agent-install --dry-run                # 只打印将要执行的动作
+#
+# 幂等：已正确的部分不会被改动。必须在真实 DSH_HOME 下运行（要读你已登录的凭据）。
+set -eu
+REPO=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+exec "${REPO}/.venv/bin/python" "${REPO}/tools/dsh_profile_setup.py" "$@"

@@ -1,0 +1,405 @@
+schema_version: 1
+name: 课后服务与晚自习辅导（合成样例）
+instance:
+  horizon:
+    start: '2025-03-03'
+    end: '2025-03-22'
+  shifts:
+  - id: p7
+    name: 第七节辅导
+    start: '16:00'
+    end: '17:00'
+  - id: p8
+    name: 晚自习
+    start: '19:00'
+    end: '20:30'
+  people:
+  - id: T01
+    name: 姜嘉怡
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: math
+      level: senior
+    max_shifts: 14
+  - id: T02
+    name: 吴雅琴
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: chinese
+      level: regular
+    max_shifts: 14
+  - id: T03
+    name: 王梦琪
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+      level: regular
+    max_shifts: 14
+  - id: T04
+    name: 孔思远
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: physics
+      level: junior
+    max_shifts: 14
+  - id: T05
+    name: 金晓明
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: math
+      level: senior
+    max_shifts: 14
+  - id: T06
+    name: 孙伟东
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: chinese
+      level: regular
+    max_shifts: 14
+  - id: T07
+    name: 蒋俊杰
+    role: teacher
+    skills:
+    - english
+    - physics
+    attributes:
+      subject: english
+      level: regular
+    max_shifts: 14
+  - id: T08
+    name: 周国强
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: physics
+      level: junior
+    max_shifts: 14
+  - id: T09
+    name: 朱志远
+    role: teacher
+    skills:
+    - math
+    - physics
+    attributes:
+      subject: math
+      level: senior
+    max_shifts: 14
+  - id: T10
+    name: 杨志远
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: chinese
+      level: regular
+    max_shifts: 14
+  - id: T11
+    name: 卫梦琪
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+      level: regular
+    max_shifts: 14
+  - id: T12
+    name: 郑志远
+    role: teacher
+    skills:
+    - math
+    - physics
+    attributes:
+      subject: physics
+      level: junior
+    max_shifts: 14
+  - id: T13
+    name: 杨丽华
+    role: teacher
+    skills:
+    - math
+    - physics
+    attributes:
+      subject: math
+      level: senior
+    max_shifts: 14
+  - id: T14
+    name: 尤伟东
+    role: teacher
+    skills:
+    - chinese
+    - english
+    attributes:
+      subject: chinese
+      level: regular
+    max_shifts: 14
+  groups:
+  - id: all_tutors
+    all: true
+  - id: math_tutors
+    by_skill: math
+  - id: english_tutors
+    by_skill: english
+  - id: seniors
+    by_attribute:
+      level: senior
+  demand:
+  - date: '2025-03-03'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-03'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-04'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-04'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-05'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-05'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-06'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-06'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-07'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-07'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-10'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-10'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-11'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-11'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-12'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-12'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-13'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-13'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-14'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-14'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-17'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-17'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-18'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-18'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-19'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-19'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-20'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-20'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  - date: '2025-03-21'
+    shift: p7
+    min: 2
+    target: 3
+    max: 3
+  - date: '2025-03-21'
+    shift: p8
+    min: 1
+    target: 2
+    max: 2
+  unavailability:
+  - person: T06
+    date_range:
+    - '2025-03-08'
+    - '2025-03-09'
+    reason: 教研活动
+  preferences:
+  - person: T02
+    shift: p8
+    kind: avoid
+    weekday: fri
+    weight: 2
+  - person: T12
+    shift: p7
+    kind: want
+    weekday: tue
+    weight: 1
+constraints:
+  hard:
+  - type: one_shift_per_day
+    max_per_day: 2
+  - type: rest_between_shifts
+    min_hours: 1
+  - type: max_consecutive_work_days
+    days: 5
+  - type: weekly_rest_days
+    min: 1
+  - type: requirement
+    shift: p7
+    group: math_tutors
+    min: 2
+    dates:
+    - '2025-03-03'
+    - '2025-03-05'
+    - '2025-03-07'
+    - '2025-03-11'
+    - '2025-03-13'
+    - '2025-03-17'
+    - '2025-03-19'
+    - '2025-03-21'
+    note: 数学辅导日
+  - type: requirement
+    shift: p7
+    group: english_tutors
+    min: 2
+    dates:
+    - '2025-03-04'
+    - '2025-03-06'
+    - '2025-03-10'
+    - '2025-03-12'
+    - '2025-03-14'
+    - '2025-03-18'
+    - '2025-03-20'
+    note: 英语辅导日
+  - type: pairing
+    junior_group: all_tutors
+    senior_group: seniors
+  soft:
+  - type: coverage_shortfall
+    weight: 1000
+  - type: coverage_excess
+    weight: 20
+  - type: skill_shortfall
+    shift: p7
+    group: seniors
+    min: 1
+    weight: 300
+    note: 尽量每晚有一位资深教师带班
+  - type: fairness
+    metric: total_shifts
+    aggregation: spread
+    weight: 80
+  - type: fairness
+    metric: shift:p8
+    aggregation: spread
+    weight: 60
+  - type: preference
+    weight: 30
+solver:
+  max_time_seconds: 45
+  num_workers: 8
+  strategy: lexicographic
+assumptions:
+- 每周一至周五开设，每天第七节与晚自习各一轮（默认值，请确认）
+- 第七节辅导需要 2~3 名教师，晚自习需要 1~2 名
+- 数学日与英语日交替，由对应科目教师承担
+unresolved:
+- 同一教师能否连排第七节与晚自习？当前允许但间隔需 ≥1 小时

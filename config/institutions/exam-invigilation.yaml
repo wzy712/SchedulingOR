@@ -1,0 +1,39 @@
+# 场景一：期末考试监考
+# 一天多场、考场并行；核心约束是"回避本科目"与"人均监考场次均衡"。
+schema_version: 1
+institution: exam-invigilation
+
+# 本场景的权重与求解参数视为权威：显式选用本机构配置时覆盖规格里的值。
+config_policy: override
+
+solver:
+  max_time_seconds: 30
+  num_workers: 8
+  strategy: lexicographic
+
+weights:
+  # 监考缺人是硬伤（考试无法开考），权重给到最高
+  understaff: 1000
+  # 监考超配意味着有老师白等，代价中等
+  overstaff: 50
+  # 每人监考总场次必须尽量平均 —— 这是老师最敏感的公平点
+  shift_spread: 80
+  weekend_spread: 40
+  preference: 30
+  consecutive_preference: 15
+  transition: 10
+
+export:
+  layout: monthly
+  formats: [xlsx, md]
+  title: 期末考试监考安排
+  # 两个场次固定配色，方便打印后一眼区分上午/下午
+  shift_colors:
+    s1: "FFF2CC"
+    s2: "D9EAD3"
+  sheets: [README, Roster, Assignments, Coverage, Fairness, Violations]
+
+notes:
+  - 教师不监考自己任教科目的场次（以 unavailability 记录表达）
+  - 同一教师一天最多两场，且两场之间至少间隔 1 小时
+  - 每场至少 1 名资深教师

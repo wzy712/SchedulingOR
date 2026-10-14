@@ -1,0 +1,528 @@
+schema_version: 1
+name: 期末考试监考（合成样例）
+instance:
+  horizon:
+    start: '2025-06-16'
+    end: '2025-06-20'
+  shifts:
+  - id: s1
+    name: 第一场
+    start: 09:00
+    end: '11:00'
+  - id: s2
+    name: 第二场
+    start: '14:00'
+    end: '16:00'
+  people:
+  - id: T01
+    name: 张浩然
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: chinese
+      level: senior
+    max_shifts: 14
+  - id: T02
+    name: 华丽华
+    role: teacher
+    skills:
+    - chemistry
+    - math
+    attributes:
+      subject: math
+      level: regular
+    max_shifts: 14
+  - id: T03
+    name: 许秀英
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+      level: regular
+    max_shifts: 14
+  - id: T04
+    name: 王子涵
+    role: teacher
+    skills:
+    - chemistry
+    - physics
+    attributes:
+      subject: physics
+      level: junior
+    max_shifts: 14
+  - id: T05
+    name: 何雅琴
+    role: teacher
+    skills:
+    - chemistry
+    - chinese
+    attributes:
+      subject: chemistry
+      level: senior
+    max_shifts: 14
+  - id: T06
+    name: 钱伟东
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: chinese
+      level: regular
+    max_shifts: 14
+  - id: T07
+    name: 吴伟东
+    role: teacher
+    skills:
+    - math
+    - physics
+    attributes:
+      subject: math
+      level: regular
+    max_shifts: 14
+  - id: T08
+    name: 蒋国强
+    role: teacher
+    skills:
+    - english
+    - physics
+    attributes:
+      subject: english
+      level: junior
+    max_shifts: 14
+  - id: T09
+    name: 施丽华
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: physics
+      level: senior
+    max_shifts: 14
+  - id: T10
+    name: 曹浩然
+    role: teacher
+    skills:
+    - chemistry
+    - chinese
+    attributes:
+      subject: chemistry
+      level: regular
+    max_shifts: 14
+  - id: T11
+    name: 曹雅琴
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: chinese
+      level: regular
+    max_shifts: 14
+  - id: T12
+    name: 褚秀英
+    role: teacher
+    skills:
+    - math
+    - physics
+    attributes:
+      subject: math
+      level: junior
+    max_shifts: 14
+  - id: T13
+    name: 李浩然
+    role: teacher
+    skills:
+    - chemistry
+    - english
+    attributes:
+      subject: english
+      level: senior
+    max_shifts: 14
+  - id: T14
+    name: 施嘉怡
+    role: teacher
+    skills:
+    - chemistry
+    - physics
+    attributes:
+      subject: physics
+      level: regular
+    max_shifts: 14
+  - id: T15
+    name: 韩鹏飞
+    role: teacher
+    skills:
+    - chemistry
+    - math
+    attributes:
+      subject: chemistry
+      level: regular
+    max_shifts: 14
+  - id: T16
+    name: 韩文静
+    role: teacher
+    skills:
+    - chinese
+    - physics
+    attributes:
+      subject: chinese
+      level: junior
+    max_shifts: 14
+  - id: T17
+    name: 朱婷婷
+    role: teacher
+    skills:
+    - math
+    - physics
+    attributes:
+      subject: math
+      level: senior
+    max_shifts: 14
+  - id: T18
+    name: 李志远
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: english
+      level: regular
+    max_shifts: 14
+  - id: T19
+    name: 赵国强
+    role: teacher
+    skills:
+    - english
+    - physics
+    attributes:
+      subject: physics
+      level: regular
+    max_shifts: 14
+  - id: T20
+    name: 陶文静
+    role: teacher
+    skills:
+    - chemistry
+    - english
+    attributes:
+      subject: chemistry
+      level: junior
+    max_shifts: 14
+  - id: T21
+    name: 陈嘉怡
+    role: teacher
+    skills:
+    - chinese
+    - math
+    attributes:
+      subject: chinese
+      level: senior
+    max_shifts: 14
+  - id: T22
+    name: 陶婷婷
+    role: teacher
+    skills:
+    - english
+    - math
+    attributes:
+      subject: math
+      level: regular
+    max_shifts: 14
+  - id: T23
+    name: 尤鹏飞
+    role: teacher
+    skills:
+    - english
+    - physics
+    attributes:
+      subject: english
+      level: regular
+    max_shifts: 14
+  - id: T24
+    name: 蒋晓明
+    role: teacher
+    skills:
+    - english
+    - physics
+    attributes:
+      subject: physics
+      level: junior
+    max_shifts: 14
+  groups:
+  - id: all_teachers
+    all: true
+  - id: chinese_teachers
+    by_skill: chinese
+  - id: math_teachers
+    by_skill: math
+  - id: english_teachers
+    by_skill: english
+  - id: physics_teachers
+    by_skill: physics
+  - id: chemistry_teachers
+    by_skill: chemistry
+  - id: seniors
+    by_attribute:
+      level: senior
+  demand:
+  - date: '2025-06-16'
+    shift: s1
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-16'
+    shift: s2
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-17'
+    shift: s1
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-17'
+    shift: s2
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-18'
+    shift: s1
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-18'
+    shift: s2
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-19'
+    shift: s1
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-19'
+    shift: s2
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-20'
+    shift: s1
+    min: 5
+    target: 6
+    max: 8
+  - date: '2025-06-20'
+    shift: s2
+    min: 5
+    target: 6
+    max: 8
+  unavailability:
+  - person: T01
+    dates:
+    - '2025-06-16'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chinese）
+  - person: T02
+    dates:
+    - '2025-06-19'
+    shifts:
+    - s1
+    reason: 回避本科目监考（math）
+  - person: T03
+    dates:
+    - '2025-06-17'
+    shifts:
+    - s1
+    reason: 回避本科目监考（english）
+  - person: T04
+    dates:
+    - '2025-06-20'
+    shifts:
+    - s1
+    reason: 回避本科目监考（physics）
+  - person: T05
+    dates:
+    - '2025-06-18'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chemistry）
+  - person: T06
+    dates:
+    - '2025-06-16'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chinese）
+  - person: T07
+    dates:
+    - '2025-06-19'
+    shifts:
+    - s1
+    reason: 回避本科目监考（math）
+  - person: T08
+    dates:
+    - '2025-06-17'
+    shifts:
+    - s1
+    reason: 回避本科目监考（english）
+  - person: T09
+    dates:
+    - '2025-06-20'
+    shifts:
+    - s1
+    reason: 回避本科目监考（physics）
+  - person: T10
+    dates:
+    - '2025-06-18'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chemistry）
+  - person: T11
+    dates:
+    - '2025-06-16'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chinese）
+  - person: T12
+    dates:
+    - '2025-06-19'
+    shifts:
+    - s1
+    reason: 回避本科目监考（math）
+  - person: T13
+    dates:
+    - '2025-06-17'
+    shifts:
+    - s1
+    reason: 回避本科目监考（english）
+  - person: T14
+    dates:
+    - '2025-06-20'
+    shifts:
+    - s1
+    reason: 回避本科目监考（physics）
+  - person: T15
+    dates:
+    - '2025-06-18'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chemistry）
+  - person: T16
+    dates:
+    - '2025-06-16'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chinese）
+  - person: T17
+    dates:
+    - '2025-06-19'
+    shifts:
+    - s1
+    reason: 回避本科目监考（math）
+  - person: T18
+    dates:
+    - '2025-06-17'
+    shifts:
+    - s1
+    reason: 回避本科目监考（english）
+  - person: T19
+    dates:
+    - '2025-06-20'
+    shifts:
+    - s1
+    reason: 回避本科目监考（physics）
+  - person: T20
+    dates:
+    - '2025-06-18'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chemistry）
+  - person: T21
+    dates:
+    - '2025-06-16'
+    shifts:
+    - s1
+    reason: 回避本科目监考（chinese）
+  - person: T22
+    dates:
+    - '2025-06-19'
+    shifts:
+    - s1
+    reason: 回避本科目监考（math）
+  - person: T23
+    dates:
+    - '2025-06-17'
+    shifts:
+    - s1
+    reason: 回避本科目监考（english）
+  - person: T24
+    dates:
+    - '2025-06-20'
+    shifts:
+    - s1
+    reason: 回避本科目监考（physics）
+  preferences:
+  - person: T03
+    shift: s2
+    kind: avoid
+    date: '2025-06-20'
+    weight: 2
+    note: 下午要接孩子
+  - person: T07
+    shift: s1
+    kind: want
+    date: '2025-06-16'
+    weight: 1
+constraints:
+  hard:
+  - type: one_shift_per_day
+    max_per_day: 2
+  - type: rest_between_shifts
+    min_hours: 1
+  - type: max_consecutive_work_days
+    days: 5
+  - type: forbid_transition
+    from: s1
+    to: s2
+  - type: requirement
+    shift: s1
+    group: seniors
+    min: 1
+  - type: no_pair
+    people:
+    - T01
+    - T05
+    note: 两人有亲属关系，不宜同场
+  soft:
+  - type: coverage_shortfall
+    weight: 1000
+  - type: coverage_excess
+    weight: 20
+  - type: fairness
+    metric: total_shifts
+    aggregation: spread
+    weight: 60
+  - type: fairness
+    metric: shift:s1
+    aggregation: spread
+    weight: 40
+  - type: preference
+    weight: 30
+  - type: consecutive_work_preference
+    preferred_max: 3
+    weight: 15
+solver:
+  max_time_seconds: 30
+  num_workers: 8
+  strategy: lexicographic
+assumptions:
+- 每位教师一天最多监考两场，且两场之间至少间隔 1 小时（默认值，请确认）
+- 每场考试需要 5~8 名监考，其中至少 1 名资深教师
+- 已按「教师不监考自己任教科目的场次」生成回避记录
+unresolved:
+- 是否需要为行动不便的教师单独安排低楼层考场？

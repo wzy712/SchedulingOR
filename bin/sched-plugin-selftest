@@ -1,0 +1,10 @@
+#!/bin/sh
+# 在终端里自检 DSH 插件装载情况（不消耗模型额度）。
+#
+#   ./bin/sched-plugin-selftest
+#   ./bin/sched-plugin-selftest --profile other --json
+#
+# 前置：DSH_HOME 指向含该 profile 的 DSH 主目录（默认 $DSH_HOME 或 ~/.dsh）。
+set -eu
+REPO=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+exec "${REPO}/.venv/bin/python" "${REPO}/tools/plugin_selftest.py" "$@"

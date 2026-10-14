@@ -1,0 +1,39 @@
+# 场景二：教师值班 / 值周
+# 长周期、需求稀疏；核心诉求是周末与夜班的均衡，以及"回家休息够"。
+schema_version: 1
+institution: duty-roster
+
+# 本场景的权重与求解参数视为权威：显式选用本机构配置时覆盖规格里的值。
+config_policy: override
+
+solver:
+  max_time_seconds: 60
+  num_workers: 8
+  strategy: lexicographic
+
+weights:
+  understaff: 1000
+  overstaff: 50
+  # 周末值班的公平性是排班投诉的头号来源，权重高于一般公平项
+  weekend_spread: 200
+  shift_spread: 80
+  preference: 30
+  consecutive_preference: 10
+  transition: 10
+
+export:
+  layout: monthly
+  formats: [xlsx, md]
+  title: 教师值班表
+  shift_colors:
+    day: "FFF2CC"
+    night: "CFE2F3"
+  sheets: [README, Roster, Assignments, Coverage, Fairness, Violations]
+  # 30 天的月历表在周末列上打底色，便于核对
+  highlight_weekends: true
+
+notes:
+  - 工作日只排白班值班；周末额外需要夜班值守
+  - 每周至少休息 2 天，连续值班不超过 5 天
+  - 班次间最小休息 12 小时（夜班后第二天不排白班）
+  - 工作日与周末、白班与夜班分别做均衡

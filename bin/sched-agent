@@ -1,0 +1,13 @@
+#!/bin/sh
+# 启动 SchedulingOR 的 DSH 命令行智能体。
+#
+# 前置：profile 已创建、bundle 已安装（见 README「作为 DSH 插件安装」）。
+#
+#   ./bin/sched-agent "帮我排 9 月的教师值班表"
+#   ./bin/sched-agent --profile other "..."     # 换 profile
+set -eu
+REPO=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export SCHEDULINGOR_HOME="$REPO"
+export DSH_HOME="${DSH_HOME:-$HOME/.dsh}"
+PROFILE="${SCHEDULINGOR_PROFILE:-scheduling}"
+exec dsh --profile "$PROFILE" "$@"
